@@ -254,7 +254,7 @@ The command output has the form `DATABASE_URL: postgres://ebitxebvixeeqd:dc59b16
 Strapi requires the following environment variables to be set for the remote instance:
 
 - `NODE_ENV`,
-- `MY_HEROKU_URL`,
+- `APP_URL`,
 - `JWT_SECRET`,
 - `ADMIN_JWT_SECRET`,
 - `API_TOKEN_SALT`,
@@ -288,7 +288,7 @@ heroku config:set APP_KEYS=$(cat .env | grep APP_KEYS | cut -d= -f2-)
 heroku config:set API_TOKEN_SALT=$(cat .env | grep API_TOKEN_SALT | cut -d= -f2)
 heroku config:set ADMIN_JWT_SECRET=$(cat .env | grep ADMIN_JWT_SECRET | cut -d= -f2)
 heroku config:set JWT_SECRET=$(cat .env | grep -w JWT_SECRET | cut -d= -f2)
-heroku config:set MY_HEROKU_URL=$(heroku info -s | grep web_url | cut -d= -f2)
+heroku config:set APP_URL=$(heroku info -s | grep web_url | cut -d= -f2)
 heroku config:set NODE_ENV=production
 ```
 
